@@ -1,5 +1,25 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: bold;
+}
+
 body {
-  background: rgb(245, 245, 245);
-  color: #db2020;
+  background: rgb(199, 197, 197);
+  color: #3d3c3c;
   margin-top: 20px;
+}
+
+.container {
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+h2{
+    color: rgb(0, 0, 0);
 }
