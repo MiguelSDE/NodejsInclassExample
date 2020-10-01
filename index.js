@@ -23,7 +23,7 @@ var completed = ["extra work"];
 //get home page /
 app.get('/', function(req, res){
     //return something to home page
-    res.render('index', {tasks: tasks}); //add completed variable to ejs ex [a:a, b:b]
+    res.render('index', {tasks: tasks, completed: completed}); //add completed variable to ejs ex [a:a, b:b]
 });
 
 //add POST method /addtask
@@ -39,9 +39,11 @@ app.post('/removetask', function(req, res){
     //push to completed 
     if(typeof removeTask ==='string'){
         tasks.splice(tasks.indexOf(removeTask), 1);
+        completed.push(removeTask);
     }else if(typeof removeTask === 'object'){
         for (var i = 0; i < removeTask.length; i++){
             tasks.splice(tasks.indexOf(removeTask[i]), 1);
+            completed.push(removeTask[i]);
         }
     }
     res.redirect('/');

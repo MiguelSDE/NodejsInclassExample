@@ -18,6 +18,9 @@
             </form>
             <h2> Completed tasks </h2>
             <!-- ejs command in for loop to go thru and output info to print out completed tasks -->
+            <% for( var i=0; i < completed.length; i++){ %>
+                 <li><%= completed[i] %></li>
+            <% } %>       
         </div>
     </body>
 </html>
