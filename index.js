@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 //Connection Information for Mongo
 const Todo = require('./models/todo.model');
-const mongoDB =  'mongodb+srv://testConnection:b8RwqJYgo4hD1xhe@nodetodoexample-iqnde.mongodb.net/test?retryWrites=true&w=majority';
+const mongoDB =  'mongodb+srv://MikeVita4:YNVrJT6WrH37yMi7@cluster0.jrtxc.mongodb.net/todolist?retryWrites=true&w=majority';
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 let db = mongoose.connection;
