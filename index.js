@@ -33,13 +33,12 @@ var completed = [];
 app.get('/', function(req, res){
     //query to mongoDB for todos
     Todo.find(function(err, todo){
-        if (err){
+        if(err){
             console.log(err);
         }else{
             tasks = [];
             completed = [];
-            id = [];
-            for(i=0; i<todo.length; i++){
+            for(i = 0; i< todo.length; i++){
                 if(todo[i].done){
                     completed.push(todo[i].item)
                 }else{
@@ -48,9 +47,8 @@ app.get('/', function(req, res){
             }
         }
     });
-
     //return something to home page
-    res.render('index', {tasks: tasks, completed: completed}); //add completed variable to ejs ex [a:a, b:b]
+    res.render('index', {tasks: tasks, completed: completed}); //add completed variable to ejs ex {a:a, b:b}
 });
 
 //add POST method /addtask
@@ -71,7 +69,7 @@ app.post('/addtask', function(req, res){
 
 app.post('/removetask', function(req, res){
     var id = req.body.check;
-    if(typeof id ==='string'){
+    if(typeof id === 'string'){
         Todo.updateOne({_id: id},{done:true},function(err){
             if(err){
                 console.log(err)
