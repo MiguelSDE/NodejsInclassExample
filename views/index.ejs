@@ -8,7 +8,7 @@
         <div class="container">
             <h2> We have a to-do list </h2>
             <form action ="/addtask" method="POST">
-                <input type="text" name="newtask" placeholder="add new task">
+                <input type="text" name="newtask" placeholder="add new task"> 
                 <button> Add a Task </button>
                 <h2> Tasks </h2>
                 <% for( var i=0; i < tasks.length; i++){ %>
@@ -19,10 +19,10 @@
             <form action ="/deleteTodo" method="POST">
                 <h2> Completed task </h2>
                     <% for(var i = 0; i < completed.length; i++){ %>
-                        <li><input type="checkbox" name="delete" value="<%= completed[i] %>" /><%= completed[i] %></li>
+                        <li><input type="checkbox" name="delete" value="<%= completed[i]._id %>" /><%= completed[i].item %></li>
                     <% } %>
                 <button formaction="/deleteTodo" type="submit"> Delete </button>
             </form>
-        </div>
+        </div> 
     </body>
 </html>
