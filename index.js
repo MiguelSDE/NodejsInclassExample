@@ -42,7 +42,7 @@ app.get('/', function(req, res){
             completed = [];
             for(i = 0; i< todo.length; i++){
                 if(todo[i].done){
-                    completed.push(todo[i].item)
+                    completed.push(todo[i])
                 }else{
                     tasks.push(todo[i])
                 }
@@ -83,6 +83,7 @@ app.post('/removetask', function(req, res){
                 if(err){
                     console.log(err)
                 }
+                res.redirect('/');
             })
         }
     }
