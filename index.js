@@ -113,7 +113,7 @@ app.post('/deleteTodo', function(req, res){
 //fetch nasa information and send to front end as JSON data
 app.get('/nasa', function(req, res){
     let nasaData;
-    fetch('//api.nasa.gov/planetary/apod?api_key=vWe1lzJ6A1zzH06D1fZMe5AGzPR2PI6jReBavfSq')
+    fetch('https://api.nasa.gov/planetary/apod?api_key=vWe1lzJ6A1zzH06D1fZMe5AGzPR2PI6jReBavfSq')
     .then(res => res.json())
     .then(data => {
         nasaData = data;
